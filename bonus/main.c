@@ -6,7 +6,7 @@
 /*   By: ariyad <ariyad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 11:41:34 by ariyad            #+#    #+#             */
-/*   Updated: 2025/01/28 19:19:00 by ariyad           ###   ########.fr       */
+/*   Updated: 2025/01/28 21:52:43 by ariyad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,11 @@ int	main(int ac, char **av)
 	stack_a = get_nbr_lst(ac, av);
 	stack_b = NULL;
 	ops_lst = NULL;
-	if (do_ops(&ops_lst, &stack_a, &stack_b))
-		op_sorted(stack_a, stack_b);
+	if (!do_ops(&ops_lst, &stack_a, &stack_b))
+		return (ft_lstclear(&stack_a),
+		ft_lstclear(&stack_a),
+		ft_clear_ops(&ops_lst), exit(1), 1);
+	op_sorted(stack_a, stack_b);
 	ft_lstclear(&stack_a);
 	ft_lstclear(&stack_a);
 	ft_clear_ops(&ops_lst);

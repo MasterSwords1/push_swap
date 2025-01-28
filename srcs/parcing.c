@@ -6,7 +6,7 @@
 /*   By: ariyad <ariyad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 18:08:19 by ariyad            #+#    #+#             */
-/*   Updated: 2025/01/28 19:07:05 by ariyad           ###   ########.fr       */
+/*   Updated: 2025/01/28 21:16:04 by ariyad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	is_sorted(t_list *lst)
 			return (0);
 		lst = lst->next;
 	}
-	return (ft_lstclear(&head), exit(1), 0);
+	return (ft_lstclear(&head), exit(0), 0);
 }
 
 static char	**get_nbrs(char **av, int ac)

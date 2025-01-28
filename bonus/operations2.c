@@ -6,7 +6,7 @@
 /*   By: ariyad <ariyad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:21:07 by ariyad            #+#    #+#             */
-/*   Updated: 2025/01/23 11:46:48 by ariyad           ###   ########.fr       */
+/*   Updated: 2025/01/28 22:06:05 by ariyad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,11 @@ void	rb(t_list **stack_b)
 
 void	rr(t_list **stack_a, t_list **stack_b)
 {
-	if (!stack_a || !stack_b || !(*stack_a) || !(*stack_b))
+	if (!stack_a || !(*stack_a))
 		return ;
 	rotate(stack_a);
+	if (!stack_b || !(*stack_b))
+		return ;
 	rotate(stack_b);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ariyad <ariyad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:55:44 by ariyad            #+#    #+#             */
-/*   Updated: 2025/01/28 16:41:50 by ariyad           ###   ########.fr       */
+/*   Updated: 2025/01/28 21:15:34 by ariyad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int ac, char **av)
 	int		lstsize;
 
 	if (ac == 1)
-		return (1);
+		return (0);
 	is_empty(ac, av);
 	stack_a = get_nbr_lst(ac, av);
 	stack_b = NULL;

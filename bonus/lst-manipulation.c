@@ -6,7 +6,7 @@
 /*   By: ariyad <ariyad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 17:54:00 by ariyad            #+#    #+#             */
-/*   Updated: 2025/01/23 20:22:47 by ariyad           ###   ########.fr       */
+/*   Updated: 2025/01/28 22:04:50 by ariyad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ void	swap(t_list	**lst)
 	if (!lst || !(*lst) || (*lst)->next == NULL)
 		return ;
 	tmp = (*lst)->next;
-	tmp->back = NULL;
-	(*lst)->back = tmp;
+	if (tmp->next)
+		tmp->next->back = (*lst);
 	(*lst)->next = tmp->next;
+	(*lst)->back = tmp;
 	tmp->next = (*lst);
+	tmp->back = NULL;
 	(*lst) = tmp;
 }
 
@@ -83,8 +85,10 @@ void	rev_rotate(t_list **lst)
 
 void	rrr(t_list **stack_a, t_list **stack_b)
 {
-	if (!stack_a || !stack_b || !(*stack_a) || !(*stack_b))
+	if (!stack_a || !(*stack_a))
 		return ;
 	rev_rotate(stack_a);
+	if (!stack_b || !(*stack_b))
+		return ;
 	rev_rotate(stack_b);
 }

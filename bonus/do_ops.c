@@ -6,7 +6,7 @@
 /*   By: ariyad <ariyad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 12:00:24 by ariyad            #+#    #+#             */
-/*   Updated: 2025/01/28 19:21:25 by ariyad           ###   ########.fr       */
+/*   Updated: 2025/01/28 22:02:09 by ariyad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	get_ops(t_data **lst)
 			break ;
 		if (!valid_op(input, ops))
 			return (write(2, "Error\n", 7), free_table(ops),
-				ft_clear_ops(lst), 0);
+				ft_clear_ops(lst), free(input), 0);
 	}
 	free_table(ops);
 	return (1);
